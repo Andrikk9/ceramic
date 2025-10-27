@@ -24,8 +24,8 @@ try {
           spaceBetween: 5
         },
         1920: {
-          spaceBetween: 5,
-          spaceBetween: 35
+          spaceBetween: 35,
+          slidesPerView: 3  
         }
       },
     modules: [Navigation, Pagination]
