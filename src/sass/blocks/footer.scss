@@ -1,9 +1,9 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .footer {
-    padding-top: 50px;
+    padding: 50px 0 50px 0;
     width: auto;
-    height: 814px;
+    max-height: 814px;
     background-color: $dark;
     &__header {
         font-size: 20px;
@@ -41,7 +41,10 @@
             color: #A22DC6;
 			text-decoration: none;
 			margin-left: 3px;
-        } 
+        }
+        label {
+            color:#fff;
+        }
     }
     &__checkbox {
         appearance: none;
@@ -52,5 +55,161 @@
         border-radius: 3px;
         background-color: $dark;
         cursor: pointer;
+        &:checked {
+            background-color: $ui-error;  // Or whatever color you want
+        }
+        
+        &:checked::after {
+            content: "✓";
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+    &__btn {
+        display: block;
+        width: 90px;
+        height: 40px;
+        margin-top: 20px;
+        border: solid 1px white;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 16px;
+    }
+    &__links {
+        display: flex;
+        margin-top: 40px;
+        width: 212px;
+        height: 236px;
+        row-gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__nav {
+        margin-top: 40px;
+        ul {
+            padding: 0;
+            list-style: none;
+            li {
+                margin-top: 20px;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &__socials {
+        display: block; 
+        margin-top: 40px;
+        width: 105px;
+        height: 83px;
+        h2 {
+            white-space: nowrap;
+        }
+        &-block {
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding: 0;
+            li {
+                a { 
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &__by {
+        display: block;
+        font-size: 14px;
+        margin: 44px 0 0 0;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer {
+        height: 575px;
+        &__links {
+            display: flex;
+            width: 430px;
+            height: 236px;
+            row-gap: 40px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__references {
+            display: flex;
+            height: 120px;
+            justify-content: space-between;
+            align-content: baseline;
+        }
+        &__socials {
+            margin: 40px 0 0 0;
+        }
+        &__by {
+            margin: 44px 0 0 0;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    .footer {
+        max-height: 425px;
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 163px;
+        }
+        &__links {
+            display: flex;
+            width: 430px;
+            height: 236px;
+            row-gap: 40px;
+            flex-wrap: nowrap;
+        }
+        &__newsletter {
+            flex: 0 0 auto;
+            max-width: 310px;
+            label {
+                color: #fff;
+            }
+        }
+        &__references {
+            display: flex;
+            gap: 80px;
+            flex: 1;
+        }
+        &__nav {
+            ul {
+                li {
+                    a {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+        &__links {
+            display: flex;
+            gap: 60px;
+            margin: 0;
+        }
+        &__socials {
+            margin: 0;
+        }
+    }
+}
+@media screen and (min-width: 1920px) {
+    .footer {
+        &__wrapper { 
+            gap: 315px;
+        }
+        &__references {
+            gap: 315px
+        }
     }
 }
