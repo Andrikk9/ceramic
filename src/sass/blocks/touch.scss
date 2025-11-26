@@ -80,8 +80,10 @@
 
 @media screen and (min-width: 768px) {
 	.touch {
-		&__form {
+		&__wrapper {
 			position: relative;
+		}
+		&__form {
 			width: 300px;
 			padding-left: 24px;
 		}
