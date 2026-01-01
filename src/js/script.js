@@ -50,6 +50,7 @@ try {
 	const tabs = document.querySelectorAll(".catalog__tab");
 	const contents = document.querySelectorAll(".catalog__content-item");
 
+
 	tabs.forEach((tab, index) => {
 		tab.addEventListener("click", () => {
 			// Удаляем активный класс у всех табов и контента
@@ -61,6 +62,7 @@ try {
 			contents[index].style.display = "block";
 		});
 	});
+
 
 	// Показываем первый контент при загрузке
 	contents.forEach((c, i) => (c.style.display = i === 0 ? "block" : "none"));
